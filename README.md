@@ -2,7 +2,7 @@
 
 > 最后更新：2026 年 7 月 26 日
 
-ScrapeFun Client 是用于连接现有 ScrapeFun Server 的 macOS 桌面客户端，不会在本机启动服务端。
+ScrapeFun Client 是用于连接 ScrapeFun 综合媒体服务器的 macOS 桌面客户端，可浏览和播放电影、剧集，也可阅读服务器中的漫画；客户端不会在本机启动服务端。
 
 ## 下载与安装
 

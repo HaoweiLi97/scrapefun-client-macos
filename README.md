@@ -1,10 +1,11 @@
-# ScrapeFun Client for macOS
+<div align="center">
+  <img src="./docs/images/client-icon.png" alt="ScrapeFun Client" width="80" />
+  <h1>ScrapeFun Client for macOS</h1>
+  <p><strong>简体中文</strong> · <a href="./README.en.md">English</a></p>
+  <p><a href="https://scrapefun.com/">官网</a> · <a href="https://github.com/HaoweiLi97/scrapefun-client-macos/releases/tag/v0.5.0">下载安装</a> · <a href="https://github.com/HaoweiLi97/scrapefun-client-macos/releases">全部发行</a> · <a href="https://scrapefun.com/#/docs">使用文档</a></p>
+</div>
 
-**简体中文** · [English](./README.en.md)
-
-[产品主页](https://github.com/HaoweiLi97/ScrapeFun) · [稳定版下载](https://github.com/HaoweiLi97/scrapefun-client-macos/releases/latest) · [全部发行](https://github.com/HaoweiLi97/scrapefun-client-macos/releases) · [在线文档](https://scrapefun.com/#/docs)
-
-> 文档更新：2026-09-28。下列版本和资产为核对当日的稳定版；后续以对应 Release 为准。
+> 文档更新：2026-11-03。下列版本和资产为核对当日的稳定版；后续以对应 Release 为准。
 
 macOS 桌面客户端，连接已有 ScrapeFun Server，浏览和播放影视资源，也可阅读漫画。Client 的安装不需要在这台 Mac 上同时部署 Server。
 
@@ -12,20 +13,27 @@ macOS 桌面客户端，连接已有 ScrapeFun Server，浏览和播放影视资
 
 | 项目 | 当前稳定版 |
 | --- | --- |
-| 版本 | [0.0.4](https://github.com/HaoweiLi97/scrapefun-client-macos/releases/tag/v0.0.4) |
+| 版本 | [0.5.0](https://github.com/HaoweiLi97/scrapefun-client-macos/releases/tag/v0.5.0) |
+| 系统 | macOS 26.5 或更新版本 |
 | 架构 | Apple Silicon / arm64 |
 | 手动安装 | `.dmg` |
-| 更新资产 | `.zip`、`.blockmap`、`latest-mac.yml` |
+| 信任状态 | ad-hoc 完整性签名，未经 Apple Developer ID 签名或公证 |
 
-从[稳定版下载页](https://github.com/HaoweiLi97/scrapefun-client-macos/releases/latest)获取 DMG。当前 Release 未提供 Intel 安装包；系统要求与签名状态以该版说明和安装包为准。
+从[0.5.0 手动下载页](https://github.com/HaoweiLi97/scrapefun-client-macos/releases/tag/v0.5.0)获取 DMG。当前 Release 未提供 Intel 安装包；系统要求与签名状态以该版说明和安装包为准。
 
 ## 安装
 
 1. 打开 DMG，将 `ScrapeFun Client.app` 拖入“应用程序”。
 2. 从“应用程序”启动客户端。
-3. 如果系统阻止启动，先核对来源、架构和具体 Release 的首次启动说明。
+3. 如果系统阻止首次启动，先核对下载来源，再执行该版说明中的命令：
 
-ZIP、blockmap 和 YAML 用于更新分发；手动首次安装优先使用 DMG。
+   ```bash
+   xattr -dr com.apple.quarantine "/Applications/ScrapeFun Client.app"
+   ```
+
+   该命令移除下载隔离标记，不会增加 Apple 签名或公证。
+
+0.5.0 仅提供 DMG 和校验文件，请手动安装；此包不通过应用内自动更新分发。
 
 ## 连接 Server
 
@@ -33,11 +41,14 @@ ZIP、blockmap 和 YAML 用于更新分发；手动首次安装优先使用 DMG�
 
 ## 更新与配置
 
-可使用客户端更新机制，或下载新版 DMG 后覆盖安装。同一用户下更新通常保留连接设置；不要删除用户配置目录。更新 Client 不替代 Server 升级，Server 的媒体库和业务数据需另行备份。
+0.5.0 请下载指定版本的 DMG，退出客户端后覆盖安装。同一用户下更新通常保留连接设置；不要删除用户配置目录。更新 Client 不替代 Server 升级，Server 的媒体库和业务数据需另行备份。
 
-## 故障排查
+<details>
+<summary>故障排查</summary>
 
 报告问题时提供 macOS 版本、Mac 架构、Client 与 Server 版本及复现步骤。安装错误附系统提示，播放错误附脱敏日志和媒体编码信息。
+
+</details>
 
 ## 支持与授权
 

@@ -1,10 +1,11 @@
-# ScrapeFun Client for macOS
+<div align="center">
+  <img src="./docs/images/client-icon.png" alt="ScrapeFun Client" width="80" />
+  <h1>ScrapeFun Client for macOS</h1>
+  <p><a href="./README.md">简体中文</a> · <strong>English</strong></p>
+  <p><a href="https://scrapefun.com/?lang=en">Website</a> · <a href="https://github.com/HaoweiLi97/scrapefun-client-macos/releases/tag/v0.5.0">Download</a> · <a href="https://github.com/HaoweiLi97/scrapefun-client-macos/releases">All releases</a> · <a href="https://scrapefun.com/?lang=en#/docs">Documentation</a></p>
+</div>
 
-[简体中文](./README.md) · **English**
-
-[Product overview](https://github.com/HaoweiLi97/ScrapeFun/blob/main/README.en.md) · [Stable downloads](https://github.com/HaoweiLi97/scrapefun-client-macos/releases/latest) · [All releases](https://github.com/HaoweiLi97/scrapefun-client-macos/releases) · [Online documentation](https://scrapefun.com/?lang=en#/docs)
-
-> Updated: 2026-09-28. Versions and assets below are the stable releases checked on this date. Follow the corresponding Release for later changes.
+> Updated: 2026-11-03. Versions and assets below are the stable releases checked on this date. Follow the corresponding Release for later changes.
 
 macOS desktop client for connecting to an existing ScrapeFun Server, browsing and playing movie and TV resources, and reading comics. You do not need to install Server on the same Mac as Client.
 
@@ -12,20 +13,27 @@ macOS desktop client for connecting to an existing ScrapeFun Server, browsing an
 
 | Item | Current stable release |
 | --- | --- |
-| Version | [0.0.4](https://github.com/HaoweiLi97/scrapefun-client-macos/releases/tag/v0.0.4) |
+| Version | [0.5.0](https://github.com/HaoweiLi97/scrapefun-client-macos/releases/tag/v0.5.0) |
+| System | macOS 26.5 or later |
 | Architecture | Apple Silicon / arm64 |
 | Manual installation | `.dmg` |
-| Update assets | `.zip`, `.blockmap`, `latest-mac.yml` |
+| Trust status | Ad-hoc integrity signature; not Apple Developer ID signed or notarized |
 
-Download the DMG from the [stable download page](https://github.com/HaoweiLi97/scrapefun-client-macos/releases/latest). This release does not provide an Intel installer. Check the specific release and package for system requirements and signing status.
+Download the DMG from the [0.5.0 download page](https://github.com/HaoweiLi97/scrapefun-client-macos/releases/tag/v0.5.0). This release does not provide an Intel installer. Check the specific release and package for system requirements and signing status.
 
 ## Installation
 
 1. Open the DMG and drag `ScrapeFun Client.app` into Applications.
 2. Launch the client from Applications.
-3. If macOS blocks launch, first verify the source, architecture, and first-launch instructions for that release.
+3. If macOS blocks first launch, verify the download source before using the command documented for this release:
 
-ZIP, blockmap, and YAML files support update distribution. Prefer the DMG for a first manual installation.
+   ```bash
+   xattr -dr com.apple.quarantine "/Applications/ScrapeFun Client.app"
+   ```
+
+   This removes the download quarantine flag; it does not add Apple signing or notarization.
+
+0.5.0 provides a DMG and checksum files only. Install it manually; this package is not distributed through in-app automatic updates.
 
 ## Connect to Server
 
@@ -33,11 +41,14 @@ Enter the Server address, such as `http://192.168.1.10:8096`, and sign in with a
 
 ## Updates and configuration
 
-Use the client's update mechanism, or download a newer DMG and install over the current version. Updates under the same user normally retain connection settings; do not delete the user configuration directory. Updating Client does not upgrade Server. Back up server libraries and business data separately.
+For 0.5.0, download the version-specific DMG, quit the client, and replace the existing app. Updates under the same user normally retain connection settings; do not delete the user configuration directory. Updating Client does not upgrade Server. Back up server libraries and business data separately.
 
-## Troubleshooting
+<details>
+<summary>Troubleshooting</summary>
 
 Include your macOS version, Mac architecture, Client and Server versions, and reproduction steps. For installation errors, include the system message; for playback errors, add logs with sensitive details removed and media codec information.
+
+</details>
 
 ## Support and licensing
 
